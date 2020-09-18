@@ -4,6 +4,14 @@ babel 插件，实现在项目中把自写的业务组件，按需导入;
 
 ## 命令
 
+```
+    npm install -- 下载该项目后，进行依赖安装
+
+    npm run build -- 打包构建，此时将 webpack.config.js 中的 new BundleAnalyzerPlugin 插件开启，分析打包大小情况
+
+    npm run dev -- 本地开发调试，此时可以将 webpack.config.js 中的 new BundleAnalyzerPlugin 插件注释掉
+```
+
 ## 入口
 
 ```
@@ -30,15 +38,15 @@ class APP extends React.PureComponent {
 ReactDOM.render(<APP />, document.querySelector('#app'));
 ```
 
-### 3 个组件全部导入
+### 情况一：3 个组件全部导入
 
 ![avatar](/src/assets/img/1.png)
 
-### 不导入 echarts，只导入另两个组件
+### 情况二：不导入 echarts，只导入另两个组件
 
 ![avatar](/src/assets/img/2.png)
 
-### 不导入 echarts 和 lodash，只导入 1 个组件
+### 情况三：不导入 echarts 和 lodash，只导入 1 个组件
 
 ![avatar](/src/assets/img/3.png)
 
