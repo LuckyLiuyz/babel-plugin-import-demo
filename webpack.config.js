@@ -79,17 +79,17 @@ module.exports = {
             filename: 'index.html',
         }),
         // 配置参数：https://www.npmjs.com/package/webpack-bundle-analyzer
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-            analyzerHost: '127.0.0.1',
-            analyzerPort: 8889,
-            reportFilename: 'report.html',
-            defaultSizes: 'parsed',
-            openAnalyzer: true,
-            generateStatsFile: false,
-            statsFilename: 'stats.json',
-            statsOptions: null,
-            logLevel: 'info'
-        }),
+        // new BundleAnalyzerPlugin({
+        //     analyzerMode: 'static',
+        //     analyzerHost: '127.0.0.1',
+        //     analyzerPort: 8889,
+        //     reportFilename: 'report.html',
+        //     defaultSizes: 'parsed',
+        //     openAnalyzer: true,
+        //     generateStatsFile: false,
+        //     statsFilename: 'stats.json',
+        //     statsOptions: null,
+        //     logLevel: 'info'
+        // }),
     ]
 }
