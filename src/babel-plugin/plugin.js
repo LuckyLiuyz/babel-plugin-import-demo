@@ -1,4 +1,4 @@
-const { join } = require('path');
+const { join, resolve } = require('path');
 const { addSideEffect, addDefault } = require('@babel/helper-module-imports');
 
 /**
@@ -56,7 +56,7 @@ class Plugin {
             // 生成 import 语句
             // import Button from 'antd/lib/button';
             // import Example from 'lyz/lib/Example';
-            // 注意：默认会从node_modules中查找需要引入的包，此处使用 './' + path，即可实现从当前目录找寻
+            // 注意：默认会从node_modules中查找需要引入的包，此处使用 './' + path，即可实现从当前目录找寻(也可以借助 __dirname 采用绝对路径)
             pluginState.selectedMethods[methodName] = addDefault(file.path, './' + path, { nameHint: methodName });
             console.log({
                 path,
