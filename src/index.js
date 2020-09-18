@@ -1,5 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Example, LodashCom, EchartsCom } from 'lyz';
+// import { Example, LodashCom, EchartsCom } from './lyz/lib/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class APP extends React.PureComponent {
+
+    constructor (props) {
+        super(props);
+    }
+
+    render () {
+        return (
+            <div className="app">
+                <Example />
+                <LodashCom />
+                <EchartsCom />
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(<APP />, document.querySelector('#app'));
