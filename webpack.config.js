@@ -29,9 +29,9 @@ module.exports = {
                                 [
                                     require.resolve('./src/babel-plugin/index'),
                                     {
-                                        "libraryName": "lyz",
-                                        "libraryDirectory": "lib",
-                                        "style": false,
+                                        "libraryName": "lyz", // import { Example, LodashCom, EchartsCom } from 'lyz';
+                                        "libraryDirectory": "lib", // 指定组件的存放目录
+                                        "style": false, //是否需要同时引入css
                                     }
                                 ]
                             ],
