@@ -17,6 +17,9 @@ module.exports = {
         hot: true,
         open: true, //启用打开后，开发服务器启动后将自动打开浏览器
     },
+    resolve: {
+        modules: [path.resolve(__dirname, "src"), "node_modules"]
+    },
     module: {
         rules: [
             {

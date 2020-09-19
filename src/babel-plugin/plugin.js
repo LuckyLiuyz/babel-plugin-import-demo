@@ -53,17 +53,24 @@ class Plugin {
             // 兼容 windows 路径
             // path.join('antd/lib/button') == 'antd/lib/button'
             const path = winPath(join(this.libraryName, libraryDirectory, transformedMethodName));
-            // 生成 import 语句
+
+            /**
+             * 注意：
+             * 1）默认会从node_modules中查找需要引入的包；
+             * 2）此处使用 './' + path，即可实现从当前目录找寻； 
+             * 3）可以借助 __dirname 采用绝对路径，指定找寻目录；
+             * 4）推荐使用在webpack.config.js中配置：resolve: {modules: [path.resolve(__dirname, "src"), "node_modules"]},
+             */
+            // addDefault：生成 import 语句
             // import Button from 'antd/lib/button';
             // import Example from 'lyz/lib/Example';
-            // 注意：默认会从node_modules中查找需要引入的包，此处使用 './' + path，即可实现从当前目录找寻(也可以借助 __dirname 采用绝对路径)
-            pluginState.selectedMethods[methodName] = addDefault(file.path, './' + path, { nameHint: methodName });
+            pluginState.selectedMethods[methodName] = addDefault(file.path, path, { nameHint: methodName });
             console.log({
                 path,
                 methodName
             })
             if (style) {
-                // 生成样式 import 语句
+                // addSideEffect：生成样式 import 语句
                 // import 'antd/lib/button/style'
                 addSideEffect(file.path, `${path}/style`);
             }

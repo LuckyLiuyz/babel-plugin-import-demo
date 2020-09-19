@@ -53,3 +53,10 @@ ReactDOM.render(<APP />, document.querySelector('#app'));
 ### 特别注意
 
 ![avatar](/src/assets/img/4.png)
+
+### 解决被导入的自写组件 ‘Module not found’ 的问题
+
+推荐使用在 webpack.config.js 中配置：resolve: {modules: [path.resolve(__dirname, "src"), "node_modules"]}, 告诉 webpack 解析模块时应该搜索的目录。
+[resolve.modules 的文档](https://www.webpackjs.com/configuration/resolve/#resolve-modules)
+
+![avatar](/src/assets/img/5.png)
