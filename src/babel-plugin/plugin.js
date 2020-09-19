@@ -64,6 +64,7 @@ class Plugin {
             // addDefault：生成 import 语句
             // import Button from 'antd/lib/button';
             // import Example from 'lyz/lib/Example';
+            // pluginState.selectedMethods[methodName] = addDefault(file.path, './' + path, { nameHint: methodName });
             pluginState.selectedMethods[methodName] = addDefault(file.path, path, { nameHint: methodName });
             console.log({
                 path,
